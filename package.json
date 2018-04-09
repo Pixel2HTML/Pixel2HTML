@@ -1,4 +1,7 @@
 {
+  "name": "pixel2html",
+  "private": true,
+  "license": "MIT",
   "devDependencies": {
     "lerna": "^2.10.0"
   }
