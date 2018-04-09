@@ -1,0 +1,9 @@
+{
+  "name": "@pixel2html/browserlist",
+  "version": "1.0.0",
+  "description": "Our official supported browserlist",
+  "main": "index.js",
+  "repository": "git@github.com:Pixel2HTML/browser-list.git",
+  "author": "Miguel Palau <mpalauzarza@gmail.com>",
+  "license": "MIT"
+}

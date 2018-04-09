@@ -1,0 +1,21 @@
+{
+  "name": "@pixel2html/stylelint-config",
+  "version": "1.5.3",
+  "description": "SCSS Recommendations from Pixel2HTML",
+  "main": "index.js",
+  "repository": "Pixel2HTML/stylelint-config",
+  "author": "Miguel Palau <miguel@pixel2html.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "stylelint": "7.x - 9.x"
+  },
+  "scripts": {
+    "postversion": "git push; git push --tags; npm publish"
+  },
+  "dependencies": {
+    "@pixel2html/browserlist": "^1.0.0",
+    "stylelint-config-css-modules": "^1.2.0",
+    "stylelint-config-recommended-scss": "^3.1.0",
+    "stylelint-scss": "^2.4.0"
+  }
+}

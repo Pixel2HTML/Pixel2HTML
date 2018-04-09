@@ -1,0 +1,16 @@
+[
+  {
+    "name": "theme_info",
+    "logo": "https:\/\/cdn.shopify.com\/s\/global\/branding\/shopify_logo_256x256.png",
+    "settings": [
+      {
+        "type": "header",
+        "content": "<%= projectName %>"
+      },
+      {
+        "type": "paragraph",
+        "content": "Scaffolded with Pixel2HTML's Shopify Skeleton"
+      }
+    ]
+  }
+]

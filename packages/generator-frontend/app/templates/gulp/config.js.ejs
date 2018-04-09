@@ -1,0 +1,52 @@
+'use strict'
+// We use this to read flags in the command line
+const argv = require('yargs').argv
+// Add your conditions here 💅
+const production = !!argv.prod || !!argv.production
+const debug = !!argv.debug
+const tunnel = !!argv.tunnel
+
+module.exports = {
+  directories: {
+    src: {
+      base: '<%= paths.src.base %>',<% if(markupLanguage == 'html'){ %>
+      markup: '<%= paths.src.markup %>',<% } %><% if(markupLanguage == 'pug'){ %>
+      markup: '<%= paths.src.markup %>/pug',<% } %>
+      fonts: '<%= paths.src.fonts %>',
+      icons: '<%= paths.src.icons %>',
+      images: '<%= paths.src.images %>',
+      scripts: '<%= paths.src.scripts %>',
+      styles: '<%= paths.src.styles %>',
+      cssModules: 'src/assets/cssModules/css.json'
+    },
+    dist: {
+      base: '<%= paths.dist.base %>',
+      markup: '<%= paths.dist.markup %>',
+      fonts: 'dist/assets/fonts',
+      icons: 'dist/assets/icons',
+      images: 'dist/assets/images',
+      scripts: 'dist/assets/js',
+      styles: 'dist/assets/css',
+    }
+  },
+  project: {
+    cssFiles: 'src/assets/styles/main/**/!(_)*.scss',
+    cssVendorFile: 'src/assets/styles/vendor/vendor.scss',
+    jsMainFile: 'src/assets/js/index.js',
+    fontFiles: [
+      '<%= paths.src.fonts %>/**/*'<% if(frontEndFramework == 'bootstrap-3'){ %>,
+      './node_modules/bootstrap-sass/assets/fonts/**/*'<% } %>
+    ]
+  },
+  onError: function(error) {
+    console.log(error.toString())
+    production
+      ? process.exit(1)
+      : this.emit('end')
+  },
+  production,
+  debug,
+  tunnel,
+  // Stuff for PurifyCss
+  purify: ['./dist/**/*.js', './dist/**/*.html']
+}

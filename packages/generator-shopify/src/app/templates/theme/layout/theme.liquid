@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{locale}}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= projectName %></title>
+    {% if page_description %}<meta name="description" content="{{ page_description | escape }}"> {% endif %}
+
+    <meta name="theme-color" content="#000000">
+
+    {{ 'vendor.scss' | asset_url | stylesheet_tag }}
+    {{ 'main.scss' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+
+  <body>
+    <div class="is-hidden">{% include 'svg-icons' %}</div>
+
+    {{ content_for_layout }}
+    {{ "https://code.jquery.com/jquery-3.2.1.min.js" | script_tag }}
+    {{ "vendor.js" | asset_url | script_tag }}
+    {{ "main.js" | asset_url | script_tag }}
+  </body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "name": "@pixel2html/generator-shopify",
+  "version": "3.0.6",
+  "description": "Scaffold and develop shopify themes quickly",
+  "author": "Miguel Palau <miguel@pixel2html.com>",
+  "scripts": {
+    "copy": "node src/app/lib/copy",
+    "clean": "node src/app/lib/clean",
+    "compile": " babel -d generators/ --ignore templates/ generators/",
+    "get-ready": "npm run clean; npm run copy; npm run compile",
+    "prepare": "npm run get-ready",
+    "lint": "eslint 'src/**/*.js'",
+    "pretest": "npm run get-ready",
+    "test": "npm run lint; jest",
+    "postversion": "git push; git push --tags"
+  },
+  "files": [
+    "generators/app"
+  ],
+  "main": "src/app/index.js",
+  "keywords": [
+    "yeoman-generator",
+    "babel",
+    "shopify"
+  ],
+  "repository": "git@github.com:Pixel2HTML/shopify-skeleton.git",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "cowsay-browser": "^1.1.8",
+    "gulp-filter": "^5.1.0",
+    "gulp-jsbeautifier": "^2.1.2",
+    "sync-parrot-api": "^1.0.2",
+    "update-notifier": "^2.3.0",
+    "yeoman-generator": "^2.0.2"
+  },
+  "devDependencies": {
+    "@pixel2html/eslint-config": "^1.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.14.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "fs-extra": "^5.0.0",
+    "jest": "^22.1.4",
+    "npm-bump": "^0.0.23",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "eslintConfig": {
+    "extends": "@pixel2html/eslint-config",
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+//- In honor of loved hyperscript daddy of React and Friends
+//- https://github.com/hyperhype/hyperscript
+mixin h(htmlElement, module)
+  #{htmlElement}(css-module=module)
+    if block
+      block
+
+//- Thanks WesBos!
+mixin svg(filename)
+  !=icon(filename)
+
+mixin img(name, module, alt)
+  img(src=`assets/images/${name}` css-module=module alt= alt ? alt : 'An image')

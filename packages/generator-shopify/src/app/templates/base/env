@@ -1,0 +1,13 @@
+<% if (setShopNow) { -%>
+SHOP_NAME='<%= shopName %>'
+SHOP_KEY='<%= shopKey %>'
+SHOP_PASSWORD='<%= shopPassword %>'
+SHOP_SECRET='<%= shopSecret %>'
+SHOP_THEME_ID='<%= shopThemeId %>'
+<% } else {-%>
+SHOP_NAME=''
+SHOP_KEY=''
+SHOP_PASSWORD=''
+SHOP_SECRET=''
+SHOP_THEME_ID=''
+<% } -%>

@@ -1,0 +1,22 @@
+//
+// <%=projectName%>
+//
+@import 'variables';
+@import 'mixins';
+
+// We can use CSS modules
+// but for now its disabled
+// make sure your css is inside this :global
+// Happy Styling! Pixel2HTML
+:global {
+  // screens:start
+  @import 'screens/base';
+  <% for(var i=1; i<=qtyScreens; i++) {%>
+  @import 'screens/screen_<%=i%>';<% } %>
+  // screens:end
+
+  // components:start
+  @import 'components/forms';
+  @import 'components/buttons';
+  // components:end
+}

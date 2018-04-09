@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    block title
+      title <%= projectName %>
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name='description' content='<%= projectName %> - Scaffolded with Pixel2HTML Frontend Generator')
+    meta(name='theme-color', content='#3e456c')
+    link(rel='manifest' href='assets/head/manifest.json')
+    link(rel="shortcut icon" href="assets/head/favico.ico")
+    link(rel="icon" type="image/png" href="assets/head/favicon.png")
+    if production
+      link(rel='stylesheet', href='assets/css/vendor.min.css')
+      link(rel='stylesheet', href='assets/css/main.min.css')
+    else
+      link(rel='stylesheet', href='assets/css/vendor.css')
+      link(rel='stylesheet', href='assets/css/main.css')
+    block head
+      //- If extra head content is necessary per page, it can be added per screen
+
+  body
+    include includes/mixins
+    include general/menu
+    block content
+      //- This gets replaced by content per page
+
+    include general/footer
+    block footer
+      //- If extra footer content is necessary per page, it can be added per screen
+
+    if production<% if(jQuery || frontEndFramework){ %>
+      script(src='//code.jquery.com/jquery-3.3.1.min.js')<% } %>
+    script(src='assets/js/main.js')
+    block scripts
+      //- Also if more scripts are needed you can hook in here <3

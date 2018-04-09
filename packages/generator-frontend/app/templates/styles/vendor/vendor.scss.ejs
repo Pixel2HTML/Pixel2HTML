@@ -1,0 +1,16 @@
+//
+// <%=projectName%>
+//
+<% if(frontEndFramework === 'bootstrap-4'){ %>
+@import "bootstrap/scss/bootstrap.scss";
+<% } %>
+<% if(frontEndFramework === 'bootstrap-3'){ %>
+@import "bootstrap-sass";
+<% } %>
+<% if(frontEndFramework === 'foundation'){ %>
+@import "foundation-sites/scss/foundation";
+@include foundation-everything;
+<% } %>
+<% if(!frontEndFramework){ %>
+@import "reset";
+<% } %>

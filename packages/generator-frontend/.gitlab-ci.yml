@@ -1,0 +1,5 @@
+test:
+  image: pixel2html/node-npm-cache:8
+  script:
+    - npm install
+    - npm test
