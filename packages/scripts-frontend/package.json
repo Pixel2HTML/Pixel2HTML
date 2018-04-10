@@ -7,11 +7,34 @@
   "repository": "https://github.com/pixel2html/pixel2html",
   "author": "Miguel Palau <mpalauzarza@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint 'src/**/*.js'",
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "dev": "rollup -c -w",
+    "postversion": "git push; git push --tags"
+  },
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/runtime": "^7.0.0-beta.44",
+    "@pixel2html/babel-preset": "^1.1.3",
+    "@pixel2html/eslint-config": "^1.5.1",
+    "babel-loader": "^7.1.4",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.5.0",
     "webpack-bundle-analyzer": "^2.11.1"
   },
   "devDependencies": {
     "rollup": "^0.57.1"
+  },
+  "eslintConfig": {
+    "extends": "@pixel2html/eslint-config",
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true
+    }
   }
 }

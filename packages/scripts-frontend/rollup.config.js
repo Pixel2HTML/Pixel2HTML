@@ -7,6 +7,9 @@ export default [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' }
     ],
-    external: []
+    external: [
+      // Everything under dependencies in package.json
+      ...Object.keys(pkg.dependencies),
+    ]
   }
 ]
