@@ -1,0 +1,17 @@
+{
+  "name": "@pixel2html/scripts-frontend",
+  "version": "0.0.1",
+  "description": "parse javascript with webpack",
+  "main": "dist/scripts-frontend.js",
+  "module": "dist/scripts-frontend.modular.js",
+  "repository": "https://github.com/pixel2html/pixel2html",
+  "author": "Miguel Palau <mpalauzarza@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.5.0",
+    "webpack-bundle-analyzer": "^2.11.1"
+  },
+  "devDependencies": {
+    "rollup": "^0.57.1"
+  }
+}
