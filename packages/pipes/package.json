@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/pipes",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Plugabble pipes for a composable gulp stream",
   "main": "dist/pipes.js",
   "module": "dist/pipes.modular.js",
@@ -19,7 +19,7 @@
     "postversion": "git push; git push --tags"
   },
   "dependencies": {
-    "@pixel2html/browserlist": "^1.0.0",
+    "@pixel2html/browserlist": "^1.0.1",
     "autoprefixer": "^8.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",
@@ -42,7 +42,7 @@
     "sass-module-importer": "^1.4.0"
   },
   "devDependencies": {
-    "@pixel2html/eslint-config": "^1.5.0",
+    "@pixel2html/eslint-config": "^1.5.1",
     "eslint": "^4.19.1",
     "rollup": "^0.57.1"
   },

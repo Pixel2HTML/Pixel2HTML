@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/eslint-config",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "our eslint config based on standard",
   "main": "index.js",
   "author": "Miguel Palau <miguel@pixel2html.com>",

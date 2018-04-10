@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/generator-shopify",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "Scaffold and develop shopify themes quickly",
   "author": "Miguel Palau <miguel@pixel2html.com>",
   "scripts": {
@@ -35,7 +35,7 @@
     "yeoman-generator": "^2.0.2"
   },
   "devDependencies": {
-    "@pixel2html/eslint-config": "^1.0.0",
+    "@pixel2html/eslint-config": "^1.5.1",
     "babel-cli": "^6.26.0",
     "babel-jest": "^22.1.0",
     "babel-plugin-add-module-exports": "^0.2.1",
