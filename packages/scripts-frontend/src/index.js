@@ -1,5 +1,5 @@
 import webpack from 'webpack'
-import config from './config'
+import config from './config/index'
 
 const compileJS = mode => new Promise(resolve =>
   webpack(config, (err, stats) => {
