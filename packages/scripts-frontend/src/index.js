@@ -11,3 +11,5 @@ const compileJS = mode => new Promise(resolve =>
     resolve()
   })
 )
+
+export default compileJS
