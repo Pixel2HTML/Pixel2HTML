@@ -111,67 +111,36 @@ class PixelGenerator extends Generator {
     this.log(chalk.cyan(' ****************************************************'))
   }
 
-  askForProjectName () {
-    return this.options.projectName
-      ? true
-      : this.prompt(
-        [{
-          type: 'input',
-          name: 'projectName',
-          required: true,
-          message: 'Give me the Project Name!'
-        }]
-      )
-        .then(props => {
-          this.options.projectName = props.projectName
-        })
-  }
-
-  askForQtyScreens () {
-    return this.options.qtyScreens
-      ? true
-      : this.prompt(
-        [{
-          type: 'input',
-          name: 'qtyScreens',
-          message: 'How many screens do you need to code?',
-          default: 1
-        }]
-      )
-        .then(props => {
-          this.options.qtyScreens = parseInt(props.qtyScreens)
-        })
-  }
-
-  askForMarkupLanguage () {
-    return this.options.markupLanguage
-      ? true
-      : this.prompt([
-        {
-          type: 'list',
-          name: 'markupLanguage',
-          message: 'What markup lenguage/integration would you like to use? Pick one',
-          choices: [
-            {
-              name: 'HTML',
-              value: 'html'
-            },
-            {
-              name: 'pug/jade',
-              value: 'pug'
-            }
-          ]
-        }]
-      )
-        .then(props => {
-          this.options.markupLanguage = props.markupLanguage
-        })
-  }
-
-  askForFrontEndFramework () {
-    return this.options.frontEndFramework
-      ? true
-      : this.prompt([{
+  async askStuff () {
+    const props = await this.prompt([
+      {
+        type: 'input',
+        name: 'projectName',
+        required: true,
+        message: 'Give me the Project Name!'
+      },
+      {
+        type: 'input',
+        name: 'qtyScreens',
+        message: 'How many screens do you need to code?',
+        default: 1
+      },
+      {
+        type: 'list',
+        name: 'markupLanguage',
+        message: 'What markup lenguage/integration would you like to use? Pick one',
+        choices: [
+          {
+            name: 'HTML',
+            value: 'html'
+          },
+          {
+            name: 'pug/jade',
+            value: 'pug'
+          }
+        ]
+      },
+      {
         type: 'list',
         name: 'frontEndFramework',
         message: 'What FrontEnd Framework do you like to include?',
@@ -189,41 +158,25 @@ class PixelGenerator extends Generator {
             name: 'Foundation',
             value: 'foundation'
           }]
-      }])
-        .then(props => {
-          this.options.frontEndFramework = props.frontEndFramework
-        })
-  }
-
-  askForjQuery () {
-    const implicitJquery = this.options.jQuery || this.options.frontEndFramework
-    if (implicitJquery) {
-      this.options.jQuery = true
-    } else {
-      this.prompt([{
+      },
+      {
         type: 'confirm',
         name: 'jQuery',
-        message: 'Would you like to use jQuery? \n http://youmightnotneedjquery.com/ \n http://youmightnotneedjqueryplugins.com/ \n',
-        default: false
-      }])
-        .then(props => {
-          this.options.jQuery = props.jQuery
-        })
-    }
-  }
-
-  askForYarnInstall () {
-    return this.options.yarn
-      ? true
-      : this.prompt([{
+        message: 'Would you like to use jQuery?'
+      },
+      {
         type: 'confirm',
         name: 'yarn',
         message: 'Should I install extra dependencies needed with Yarn?',
         default: true
-      }])
-        .then(props => {
-          this.options.yarn = props.yarn
-        })
+      }
+    ])
+    this.options.projectName = props.projectName
+    this.options.qtyScreens = parseInt(props.qtyScreens)
+    this.options.markupLanguage = props.markupLanguage
+    this.options.frontEndFramework = props.frontEndFramework
+    this.options.jQuery = props.jQuery
+    this.options.yarn = props.yarn
   }
 
   writeProjectFiles () {
