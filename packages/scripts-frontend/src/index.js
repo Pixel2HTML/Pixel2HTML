@@ -1,11 +1,14 @@
 import webpack from 'webpack'
 import getConfig from './config/index'
-import setEnv from './setEnv'
+import { setEnv, setDebug } from './setEnv'
 import { userConfig } from './config/paths'
 import { existsSync } from 'fs'
 
 const compileJS = mode => {
-  if (mode === 'production' || mode === 'debug') {
+  const isDebug = mode === 'debug'
+  setDebug(isDebug)
+
+  if (mode === 'production' || isDebug) {
     setEnv('production')
   } else {
     setEnv('development')
