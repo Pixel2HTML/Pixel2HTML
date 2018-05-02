@@ -10,7 +10,7 @@
     "debug": "scripts-frontend debug"
   },
   "dependencies": {
-    "@pixel2html/scripts-frontend": "*",
+    "@pixel2html/scripts-frontend": "^0.2.0",
     "gulp": "^4.0.0"
   }
 }

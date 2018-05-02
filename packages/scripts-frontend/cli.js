@@ -1,5 +1,6 @@
-import compiler from './index.js'
+#!/usr/bin/env node
 
+const compiler = require('./dist/common.js')
 const args = process.argv.slice(2)
 
 const commands = [
