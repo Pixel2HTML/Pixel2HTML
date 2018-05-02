@@ -5,7 +5,12 @@ import { userConfig } from './config/paths'
 import { existsSync } from 'fs'
 
 const compileJS = mode => {
-  setEnv(mode)
+  if (mode === 'production' || mode === 'debug') {
+    setEnv('production')
+  } else {
+    setEnv('development')
+  }
+
   const defaultConfig = getConfig()
 
   const customConfig = existsSync(userConfig)
