@@ -1,8 +1,4 @@
-import { env } from 'process'
-
-const { NODE_ENV } = env
-
-export const checkEnv = mode => NODE_ENV === mode
+export const checkEnv = mode => process.env.NODE_ENV === mode
 
 export const isProd = () => checkEnv('production')
 export const isDebug = () => checkEnv('debug')
