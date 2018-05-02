@@ -9,10 +9,11 @@ const compileJS = mode => {
   const defaultConfig = getConfig()
 
   const customConfig = existsSync(userConfig)
-    ? require(userConfig)
-    : {}
 
-  const config = Object.assign({}, defaultConfig, customConfig)
+  const config = customConfig
+    // Let's do it the Next.js way
+    ? require(userConfig)(defaultConfig, webpack)
+    : defaultConfig
   return new Promise(resolve =>
     webpack(config, (err, stats) => {
       if (err) console.log('Webpack', err)

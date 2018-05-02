@@ -9,7 +9,7 @@ const entry = makePath('src/assets/js/index.js')
 const styles = makePath('src/assets/cssModules/css.json')
 const output = makePath('dist/assets/js')
 
-const userConfig = makePath('webpack.config.js')
+const userConfig = makePath('scripts.config.js')
 
 export {
   src,
