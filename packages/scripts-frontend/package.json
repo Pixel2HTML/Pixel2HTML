@@ -17,6 +17,7 @@
     "build": "rollup -c",
     "prepare": "npm run build",
     "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build",
     "postversion": "git push; git push --tags"
   },
   "dependencies": {
