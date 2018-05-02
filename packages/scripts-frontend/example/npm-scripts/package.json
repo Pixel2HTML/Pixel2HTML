@@ -1,0 +1,15 @@
+{
+  "name": "scripts-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "scripts-frontend development",
+    "build": "scripts-frontend production",
+    "debug": "scripts-frontend debug"
+  },
+  "dependencies": {
+    "@pixel2html/scripts-frontend": "*"
+  }
+}

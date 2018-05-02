@@ -7,10 +7,14 @@
   "repository": "https://github.com/pixel2html/pixel2html",
   "author": "Miguel Palau <mpalauzarza@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "scripts-frontend": "dist/bin.js"
+  },
   "files": [
     "readme.md",
     "dist/common.js",
-    "dist/modular.js"
+    "dist/modular.js",
+    "dist/bin.js"
   ],
   "scripts": {
     "lint": "eslint 'src/**/*.js'",
