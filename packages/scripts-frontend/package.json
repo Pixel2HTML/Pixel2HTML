@@ -19,7 +19,7 @@
     "@babel/runtime": "^7.0.0-beta.44",
     "@pixel2html/babel-preset": "^1.2.0",
     "@pixel2html/eslint-config": "^1.5.1",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^8.0.0-beta.2",
     "eslint": "^4.19.1",
     "eslint-loader": "^2.0.0",
     "uglifyjs-webpack-plugin": "^1.2.4",
