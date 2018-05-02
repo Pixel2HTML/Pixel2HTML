@@ -12,7 +12,7 @@ const compileJS = mode => {
     ? require(userConfig)
     : {}
 
-  const config = Object.assign(defaultConfig, customConfig)
+  const config = Object.assign({}, defaultConfig, customConfig)
   return new Promise(resolve =>
     webpack(config, (err, stats) => {
       if (err) console.log('Webpack', err)
