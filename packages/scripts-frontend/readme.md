@@ -2,14 +2,43 @@
 
 A highly shareable and customizable webpack config.
 
-## Getting Started
-
-If you're using our [Frontend Generator](http://npm.im/@pixel2html/generator-frontend) or our [Shopify Generator](http://npm.im/@pixel2html/generator-shopify) then you don't have to to anything since they already use this package.
-But if you're coming from scratch this is what you need to do:
+## Getting Started FAST!
 
 ```sh
 npm install --dev @pixel2html/scripts-frontend
 ```
+
+
+```sh
+npx scripts-frontend development
+```
+
+:fire:
+
+We have a set of opinions towards how the files should look like for it to be a zero-config situation.
+
+```
+# Your project root
+.
+├── dist
+│   └── assets
+│       └── js
+│           └── main.js # Compiled file
+└── src
+    └── assets
+        └── js
+            └── index.js # Your starting point
+```
+
+That is to be compliant with the defaults we were using on our `generator-frontend` package, however this is easy to customize.
+
+## Frontend Generator
+
+If you're using our [Frontend Generator](http://npm.im/@pixel2html/generator-frontend) or our [Shopify Generator](http://npm.im/@pixel2html/generator-shopify) then you don't have to to anything since they already use this package.
+But if you're coming from scratch this is what you need to do:
+
+
+## Node
 
 Create an `index.js` with the following:
 
@@ -27,30 +56,31 @@ compiler(mode)
 
 You can now run `node index` to get your JS compiled.
 
+
+## Gulp
+
+```js
+const gulp = require('gulp')
+const compilator = require('@pixel2html/scripts-frontend')
+
+gulp.task('start', async done => {
+  try {
+    await compilator('development')
+    done()
+  } catch (e) {
+    console.log(e)
+    done()
+  }
+})
+```
 Check our examples folder for examples with custom configurations, gulp and npm-scripts.
 
-We have a set of opinions towards how the files should look like for it to be a zero-config situation.
-
-```
-# Your project root
-.
-├── dist
-│   └── assets
-│       └── js
-│           └── main.js
-└── src
-    └── assets
-        └── js
-            └── index.js
-```
-
-That is to be compliant with the defaults we were using on our `generator-frontend` package, however this is easy to customize.
 
 ## Customizing
 
 To customize your setup you need to create a `scripts.config.js` file at the root of your project that file will be a function that takes 2 parameters:
 
-- config (the default config)
+- config (the default config) [See Webpack Config](https://webpack.js.org/configuration/)
 - webpack (a webpack instance so you can use plugins and whatever)
 
 
@@ -66,7 +96,6 @@ module.exports = function(config, webpack) {
 ```
 
 Check the examples folder for some reasonable examples.
-
 
 ## PRs Welcome!
 
