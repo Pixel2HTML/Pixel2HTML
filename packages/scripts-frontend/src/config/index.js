@@ -1,6 +1,6 @@
 import { entry, output, styles } from './paths'
 import getPlugins from './plugins/getPlugins'
-import { shouldBeDebugMode as checkDebug } from './tools/checkEnv'
+import { checkDebug } from './tools/checkEnv'
 import modules from './modules'
 
 const shouldBeDebugMode = checkDebug()

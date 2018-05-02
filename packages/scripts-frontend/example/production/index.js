@@ -1,6 +1,6 @@
-const compiler = require('..')
+const compiler = require('../..')
 
-const mode = 'development'
+const mode = 'production'
 console.log(`Compiling in ${mode} mode...`)
 
 compiler(mode)
