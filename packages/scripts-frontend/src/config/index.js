@@ -40,6 +40,7 @@ const getConfig = () => {
       hints: shouldBeDebugMode ? 'warning' : false
     },
   }
+
   return config
 }
 
