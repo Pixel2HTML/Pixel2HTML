@@ -1,6 +1,5 @@
 const baseFiles = [
   'LICENSE',
-  'webpack.config.js'
 ]
 
 const baseTemplates = [
@@ -16,14 +15,6 @@ const dotfiles = [
 
 const dotTemplates = [
   'tern-project',
-]
-
-const webpack = [
-  'webpack/commonPlugins.js',
-  'webpack/debugPlugins.js',
-  'webpack/developmentPlugins.js',
-  'webpack/paths.js',
-  'webpack/productionPlugins.js',
 ]
 
 const gulpFiles = [
@@ -65,7 +56,6 @@ module.exports = {
   baseTemplates,
   dotfiles,
   dotTemplates,
-  webpack,
   gulpFiles,
   gulpTemplates,
   scss,

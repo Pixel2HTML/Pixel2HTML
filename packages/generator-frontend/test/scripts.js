@@ -1,7 +1,6 @@
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 import path from 'path'
-import { webpack as webpackFiles } from '../app/filesToAssert'
 
 describe('Script features', function () {
   beforeEach(function () {
@@ -23,8 +22,6 @@ describe('Script features', function () {
     assert.file([
       'src/assets/js/index.js',
       'src/assets/js/app.js',
-      'webpack.config.js',
-      ...webpackFiles
     ])
   })
 

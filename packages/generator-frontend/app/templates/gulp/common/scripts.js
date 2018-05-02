@@ -1,14 +1,5 @@
 const gulp = require('gulp')
-const webpack = require('webpack')
-const webpackConfig = require('../../webpack.config')
+const compilator = require('@pixel2html/scripts-frontend')
+const { mode } = require('../config.js')
 
-gulp.task('scripts', () =>
-  new Promise(resolve => webpack(webpackConfig, (err, stats) => {
-    if (err) console.log('Webpack', err)
-    console.log(stats.toString({
-      chunks: false,
-      colors: true
-    }))
-    resolve()
-  }))
-)
+gulp.task('scripts', () => compilator(mode))
