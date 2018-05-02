@@ -63,20 +63,13 @@ You can now run `node index` to get your JS compiled.
 const gulp = require('gulp')
 const compilator = require('@pixel2html/scripts-frontend')
 
-gulp.task('start', async done => {
-  try {
-    await compilator('development')
-    done()
-  } catch (e) {
-    console.log(e)
-    done()
-  }
-})
+gulp.task('start', () => compilator('development'))
+gulp.task('build', () => compilator('production'))
+
+gulp.task('default', gulp.series('start'))
 ```
-Check our examples folder for examples with custom configurations, gulp and npm-scripts.
 
-
-## Customizing
+## Customizing the underlying config
 
 To customize your setup you need to create a `scripts.config.js` file at the root of your project that file will be a function that takes 2 parameters:
 
