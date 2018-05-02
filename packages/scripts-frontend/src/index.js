@@ -4,8 +4,11 @@ import setEnv from './setEnv'
 
 const compileJS = mode => {
   setEnv(mode)
+  const defaultConfig = getConfig()
+
+  const config = defaultConfig
   return new Promise(resolve =>
-    webpack(getConfig(), (err, stats) => {
+    webpack(config, (err, stats) => {
       if (err) console.log('Webpack', err)
       console.log(stats.toString({
         chunks: false,
