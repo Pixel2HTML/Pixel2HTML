@@ -57,7 +57,7 @@ But if you're coming from scratch this is what you need to do:
 Create an `index.js` with the following:
 
 ```js
-const compiler = require('@pixel2html/scripts-frontend')
+const { compiler } = require('@pixel2html/scripts-frontend')
 
 // Options are development, production or debug
 const mode = 'development'
@@ -75,10 +75,10 @@ You can now run `node index` to get your JS compiled.
 
 ```js
 const gulp = require('gulp')
-const compilator = require('@pixel2html/scripts-frontend')
+const { compiler } = require('@pixel2html/scripts-frontend')
 
-gulp.task('start', () => compilator('development'))
-gulp.task('build', () => compilator('production'))
+gulp.task('start', () => compiler('development'))
+gulp.task('build', () => compiler('production'))
 
 gulp.task('default', gulp.series('start'))
 ```
@@ -98,6 +98,24 @@ module.exports = function(config, webpack) {
   // tweak away esketit
 
   // Always return the config
+  return config
+}
+```
+
+## Shopify
+
+Since we do quite a bit of Shopify ourselves we added some opinionated list of shopify plugins which you can access like this:
+
+`scripts.config.js`
+
+```js
+const { getShopifyPlugins } = require('@pixel2html/scripts-generator')
+
+module.exports = (config, webpack) => {
+  config.plugins = getShopifyPlugins()
+
+  // So the sourcemaps work on Shopify
+  config.output.filename = '[name].js.liquid'
   return config
 }
 ```
