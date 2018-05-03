@@ -1,4 +1,4 @@
-const compiler = require('../..')
+const { compiler } = require('../..')
 
 const mode = 'debug'
 console.log(`Compiling in ${mode} mode...`)
