@@ -6,7 +6,7 @@ import { checkDebug, isDebug } from '../tools/checkEnv'
 const getPlugins = () => {
   const shouldBeDebugMode = checkDebug()
 
-  let plugins = [...commonPlugins]
+  let plugins = [ ...commonPlugins ]
 
   if (shouldBeDebugMode) plugins = [...plugins, ...productionPlugins]
   if (isDebug()) plugins = [...plugins, ...debugPlugins]

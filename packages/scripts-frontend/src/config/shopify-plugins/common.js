@@ -1,4 +1,4 @@
-import banner from '../plugins/banner'
+import banner from './banner'
 import webpack from 'webpack'
 
 const commonPlugins = [
@@ -19,7 +19,10 @@ const commonPlugins = [
   // thanks create-react-app
   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   // Warning banner
-  new webpack.BannerPlugin(banner)
+  new webpack.BannerPlugin({
+    banner,
+    raw: true
+  })
 ]
 
 export default commonPlugins
