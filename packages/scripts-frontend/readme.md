@@ -1,6 +1,20 @@
 # @pixel2html/scripts-frontend
 
+[![npm version](https://badge.fury.io/js/%40pixel2html%2Fscripts-frontend.svg)](https://badge.fury.io/js/%40pixel2html%2Fscripts-frontend)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 A highly shareable and customizable webpack config.
+
+## Features
+
+- Dynamic Imports (Code Splitting)
+- ES2017+
+- JSX
+- Linting via `@pixel2html/eslint-config`
+- Parsing all js (ours and vendor, vendor is cached though)
+- Sourcemaps for debugging
+- Tree-Shaking
+- Extend and customize the underlying config
 
 ## Getting Started FAST!
 
