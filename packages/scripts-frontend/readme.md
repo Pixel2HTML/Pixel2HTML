@@ -120,6 +120,34 @@ module.exports = (config, webpack) => {
 }
 ```
 
+## Shopify Generator
+
+We also supplied a fully opinionated Shopify config which you can setup like this:
+
+`scripts.config.js`
+
+```js
+const { createShopifyConfig } = require('@pixel2html/scripts-frontend')
+
+module.exports = config => createShopifyConfig(config)
+```
+
+:fire:
+
+This is compliant with the way our Shopify Generator works meaning your starting point is:
+
+`src/scripts/index.js`
+
+and the bundle outputs to:
+
+`.deploy/assets/main.js.liquid`
+
+While splitting vendor code from node_modules to:
+
+`.deploy/assets/vendor.js.liquid`
+
+The liquid extension is used for sourcemaps support via Shopify Cache busting situation for assets.
+
 Check the examples folder for some reasonable examples.
 
 ## PRs Welcome!
