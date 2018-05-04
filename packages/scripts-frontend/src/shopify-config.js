@@ -1,6 +1,6 @@
 import getShopifyPlugins from './config/shopify-plugins/getPlugins'
 import { cwd } from 'process'
-import { join } from 'fs'
+import { join } from 'path'
 import { isDebug } from './config/tools/checkEnv'
 
 const makePath = filePath => join(cwd(), filePath)
