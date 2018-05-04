@@ -15,7 +15,7 @@ Home of our OpenSource Packages.
 
 ## Looking for a challenge?
 
-Try our [Technical Challenges](https://code.pixel2html.com/open-source/technical-challengesText) for Front-end, React, Shopify or Wordpress. We're always looking for new talent.
+Try our [Technical Challenges](https://code.pixel2html.com/open-source/technical-challenges) for Front-end, React, Shopify or Wordpress. We're always looking for new talent.
 
 Cheers!
 
