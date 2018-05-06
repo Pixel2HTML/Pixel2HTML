@@ -1,0 +1,9 @@
+{
+  "name": "@pixel2html/gulp-tasks",
+  "version": "0.0.1",
+  "description": "Pixel2HTML Frontend Gulp Tasks",
+  "main": "index.js",
+  "repository": "https://github.com/Pixel2HTML/Pixel2HTML",
+  "author": "Miguel Palau <miguel@pixel2html.com>",
+  "license": "MIT"
+}
