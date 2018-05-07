@@ -3,12 +3,12 @@ const gulp = require('gulp')
 const prod = config.production
 const createWatcher = require('./development/watch')
 
-const empty = () => {}
+const pixel2htmlGulpTasks = options => {
+  const taskOverrides = options && options.taskOverrides
+    ? options.taskOverrides : () => {}
+  const watchExtensions = options && options.watchExtensions
+    ? options.watchExtensions : () => {}
 
-const pixel2htmlGulpTasks = ({
-  taskOverrides = empty,
-  watchExtensions = empty
-}) => {
   const common = [
     'fonts', 'markup',
     'scripts', 'static',
@@ -27,18 +27,20 @@ const pixel2htmlGulpTasks = ({
   production.forEach(file => require(`./production/${file}`))
   development.forEach(file => require(`./development/${file}`))
 
+  let tasks = [
+    'clean',
+    'styles',
+    'images',
+    'head',
+    'scripts',
+    'fonts',
+    'markup',
+  ]
+
   const prodTasks = [
     'minifyStyles',
     'purify',
     'zip',
-  ]
-
-  let tasks = [
-    'clean',
-    'styles',
-    'images', 'head',
-    'scripts', 'fonts',
-    'markup',
   ]
 
   if (prod) tasks = [...tasks, ...prodTasks]

@@ -1,14 +1,14 @@
 const gulp = require('gulp')
-const config = require('../config')
 const zip = require('gulp-zip')
+const { dist, onError } = require('../config')
 
 gulp.task('zip', () => {
   const distFiles = [
-    `${config.directories.dist.base}/**`,
-    `!${config.directories.dist.base}`
+    `${dist}/**`,
+    `!${dist}`
   ]
 
   return gulp.src(distFiles, {base: '.'})
-    .pipe(zip('latest.zip')).on('error', config.onError)
+    .pipe(zip('latest.zip')).on('error', onError)
     .pipe(gulp.dest('dist/releases'))
 })
