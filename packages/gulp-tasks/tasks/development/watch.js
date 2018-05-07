@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
-const config = require('../config')
+const { src } = require('../config')
 
 const reload = done => {
   browserSync.reload()
@@ -10,16 +10,16 @@ const reload = done => {
 const createWatcher = extraWatchers => {
   gulp.task('watch', done => {
     // static files
-    gulp.watch(config.directories.src.markup + '/**/*.pug', gulp.series('markup', reload))
-    gulp.watch(config.directories.src.icons + '/**/*.svg', gulp.series('markup', reload))
-    gulp.watch(config.directories.src.images + '/**/*', gulp.series('images', reload))
-    gulp.watch(config.directories.src.base + '/assets/head/**/*', gulp.series('head', reload))
-    // Fonts
-    gulp.watch(config.project.fontFiles, gulp.series('fonts', reload))
+    gulp.watch(`${src}/pug/**/*.pug`, gulp.series('markup', reload))
+    gulp.watch(`${src}/assets/icons/**/*.svg`, gulp.series('markup', reload))
+    gulp.watch(`${src}/assets/images/**/*`, gulp.series('images', reload))
+    gulp.watch(`${src}/assets/head/**/*`, gulp.series('head', reload))
+    gulp.watch(`${src}/assets/fonts/**/*`, gulp.series('fonts', reload))
+
     // styles
-    gulp.watch(config.directories.src.styles + '/**/*.scss', gulp.series('styles'))
+    gulp.watch(`${src}/assets/styles/**/*.scss`, gulp.series('styles'))
     // Scripts
-    gulp.watch(config.directories.src.scripts + '/**/*.js', gulp.series('scripts', reload))
+    gulp.watch(`${src}/assets/js/**/*.js`, gulp.series('scripts', reload))
 
     extraWatchers(reload)
     done()

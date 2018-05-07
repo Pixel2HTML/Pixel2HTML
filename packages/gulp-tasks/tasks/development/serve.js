@@ -1,5 +1,5 @@
 const gulp = require('gulp')
-const config = require('../config')
+const { tunnel, dist } = require('../config')
 const browserSync = require('browser-sync')
 const openBrowser = require('react-dev-utils/openBrowser')
 const WebpackDevServerUtils = require('react-dev-utils/WebpackDevServerUtils')
@@ -16,15 +16,17 @@ gulp.task('browser-sync', done => {
       browserSync.init({
         port,
         server: {
-          baseDir: config.directories.dist.base,
+          baseDir: dist,
           serveStaticOptions: {
+            // pretty urls index.html can be just index
             extensions: ['html']
           }
         },
         open: false,
         logConnections: true,
-        tunnel: config.tunnel,
+        tunnel,
         logPrefix: 'Pixel2Html',
+        // HMR all the css things
         files: ['**/*.css']
       })
       openBrowser(urls.localUrlForBrowser)
