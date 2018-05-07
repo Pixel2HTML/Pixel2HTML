@@ -10,7 +10,6 @@ const pixel2htmlGulpTasks = ({
   watchExtensions = empty
 }) => {
   const common = [
-    'cssModulesWrite',
     'fonts', 'markup',
     'scripts', 'static',
     'styles'
