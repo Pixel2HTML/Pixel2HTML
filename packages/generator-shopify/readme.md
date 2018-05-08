@@ -20,7 +20,7 @@ $ yo @pixel2html/shopify
 
 ## Features
 
-- Sourcemaps
+- Sourcemaps :fire:
 - JS with Webpack and ES6 (Just require your problems away)
 - Split vendor and app code (both JS and SCSS)
 - SVG System
