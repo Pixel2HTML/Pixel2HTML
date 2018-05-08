@@ -23,9 +23,15 @@ $ yo @pixel2html/shopify
 - Sourcemaps :fire:
 - JS with Webpack and ES6 (Just require your problems away)
 - Split vendor and app code (both JS and SCSS)
+- Remove unused css rules on production
 - SVG System
 - Shopify Plus in mind (Checkout layouts)
 - Sensible starting points (all in blank but already wired up)
 - Based of Gulp 4
 - Live reloading with Browser Sync
 - Zip everything in the end
+
+## Coming soon...
+
+- Ajax cart by default (clients love that)
+- How to account for yolo clients 🤔... (aka hot changes on the admin area...)
