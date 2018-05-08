@@ -47,7 +47,7 @@ const baseFiles = [
   'gulpfile.js',
   'package.json',
   'readme.md',
-  'webpack.config.js'
+  'scripts.config.js'
 ]
 
 const gulpFiles = [
