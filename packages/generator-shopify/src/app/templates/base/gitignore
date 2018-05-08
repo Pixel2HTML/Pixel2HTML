@@ -1,5 +1,6 @@
 node_modules/*
 dist/*
+.deploy/*
 .env
 dist
 releases
