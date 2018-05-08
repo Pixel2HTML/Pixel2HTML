@@ -31,21 +31,21 @@ module.exports = {
     ]
   },
   src: {
-    styles: './src/styles',
+    styles: 'src/styles',
     scripts: 'src/scripts',
     fonts: [
-      './src/fonts/**/*'
+      'src/fonts/**/*'
     ],
     icons: [
-      './src/icons/**/*'
+      'src/icons/**/*'
     ],
     images: [
-      './src/images/**/*.{svg,png,jpg,jpeg,gif,ico}'
+      'src/images/**/*.{svg,png,jpg,jpeg,gif,ico}'
     ],
     shopify: [
-      './src/theme/**/*'
+      'src/theme/**/*'
     ],
-    theme: './src/theme'
+    theme: 'src/theme'
   },
   onError: function (error) {
     console.log(error.toString())
