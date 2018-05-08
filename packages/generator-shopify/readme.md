@@ -7,6 +7,8 @@
 
 This is a tool for scaffolding Shopify themes quickly. Built as a starting point like Slate but with more flexibility in mind.
 
+<img src="https://rawgit.com/Pixel2HTML/Pixel2HTML/master/packages/generator-shopify/tour.svg" alt="Cool demo" />
+
 Brought to you by ~>
 <a href='https://pixel2html.com/'><img alt='Pixel2HTML Logo' src='pixel2html-logo.png' width='100px' /></a>
 
