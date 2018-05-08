@@ -17,6 +17,7 @@
     "lint": "npm run lint:js; npm run lint:scss"
   },
   "dependencies": {
+    "@pixel2html/scripts-frontend": "^0.4.2",
     "del": "^3.0.0",
     "dotenv": "^4.0.0",
     "gulp": "^4.0.0",

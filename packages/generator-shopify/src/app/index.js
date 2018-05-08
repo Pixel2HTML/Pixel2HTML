@@ -14,6 +14,15 @@ class ShopifySkeleton extends Yeoman {
     updateNotifier({pkg}).notify()
   }
 
+  welcome () {
+    this.log('')
+    this.log(chalk.cyan(' ****************************************************'))
+    this.log(chalk.cyan('  Welcome to'), chalk.white.bold('@pixel2html/generator-shopify'))
+    this.log(chalk.white('  A Yeoman generator for scaffolding Shopify projects'))
+    this.log(chalk.cyan('  Version'), chalk.white.bold(` ${pkg.version}`))
+    this.log(chalk.cyan(' ****************************************************'))
+  }
+
   vaderSays () {
     const generalOverview = cowsay.say({
       text: 'A few general purpose questions now...',

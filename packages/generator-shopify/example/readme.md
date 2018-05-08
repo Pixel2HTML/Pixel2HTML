@@ -1,6 +1,6 @@
-# Pixel2Html-BikeShop
+# BikeShop
 
-## Scaffolded by Shopify Skeleton Version 3.0.5
+## Scaffolded by Shopify Skeleton Version 3.0.7
 
 Easy Shopify Development 💅
 

@@ -1,15 +1,27 @@
 // We use this to read flags in the command line
-const production = process.env.NODE_ENV === 'production'
-const debug = process.env.DEBUG_MODE === 'true'
+const {
+  argv
+} = require('yargs')
+const {
+  env
+} = require('process')
+
+const production = !!argv.prod || !!argv.production
+const debug = !!argv.debug
+const mode = debug ?
+  'debug' :
+  production ?
+  'production' :
+  'development'
 
 module.exports = {
   theme: 'dist',
   shopify: {
-    key: process.env.SHOP_KEY,
-    pass: process.env.SHOP_PASSWORD,
-    secret: process.env.SHOP_SECRET,
-    themeId: process.env.SHOP_THEME_ID,
-    shopName: process.env.SHOP_NAME,
+    key: env.SHOP_KEY,
+    pass: env.SHOP_PASSWORD,
+    secret: env.SHOP_SECRET,
+    themeId: env.SHOP_THEME_ID,
+    shopName: env.SHOP_NAME,
     flatFolders: [
       'assets',
       'config',
@@ -23,21 +35,21 @@ module.exports = {
     ]
   },
   src: {
-    styles: './src/styles',
+    styles: 'src/styles',
     scripts: 'src/scripts',
     fonts: [
-      './src/fonts/**/*'
+      'src/fonts/**/*'
     ],
     icons: [
-      './src/icons/**/*'
+      'src/icons/**/*'
     ],
     images: [
-      './src/images/**/*.{svg,png,jpg,jpeg,gif,ico}'
+      'src/images/**/*.{svg,png,jpg,jpeg,gif,ico}'
     ],
     shopify: [
-      './src/theme/**/*'
+      'src/theme/**/*'
     ],
-    theme: './src/theme'
+    theme: 'src/theme'
   },
   onError: function(error) {
     console.log(error.toString())
@@ -48,6 +60,7 @@ module.exports = {
   },
   production,
   debug,
+  mode,
   // For autoprefixer
   browsers: [
     'last 2 Chrome versions',
