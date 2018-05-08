@@ -20,14 +20,8 @@
     "lint": "npm run lint:js; npm run lint:scss"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.38",
-    "@babel/runtime": "^7.0.0-beta.38",
-    "@pixel2html/babel-preset": "^0.7.0",
-    "babel-loader": "8.0.0-beta.0",
-    "cross-env": "^5.1.3",
     "del": "^3.0.0",
     "dotenv": "^4.0.0",
-    "eslint-loader": "^1.9.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-changed-in-place": "^2.3.0",
@@ -38,7 +32,6 @@
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-if": "^2.0.2",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-shopify-theme": "mike3run/gulp-shopify-theme",
@@ -52,18 +45,13 @@
     "require-dir": "^0.3.2",
     "sass-module-importer": "^1.4.0",
     "svg4everybody": "^2.1.9",
-    "uglifyjs-webpack-plugin": "^1.1.4",
-    "webpack": "^3.10.0"
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "@pixel2html/eslint-config": "^1.0.0",
     "@pixel2html/stylelint-config": "^1.3.0",
     "browser-sync": "^2.18.13",
-    "eslint": "^4.14.0",
     "react-dev-utils": "^4.2.1",
-    "stylelint": "^8.4.0",
-    "webpack-bundle-analyzer": "^2.9.1",
-    "webpack-monitor": "^1.0.14"
+    "stylelint": "^8.4.0"
   },
   "stylelint": {
     "extends": "@pixel2html/stylelint-config"

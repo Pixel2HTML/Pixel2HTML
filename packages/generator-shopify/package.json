@@ -26,28 +26,25 @@
   "repository": "git@github.com:Pixel2HTML/shopify-skeleton.git",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.3.0",
+    "chalk": "^2.4.1",
     "cowsay-browser": "^1.1.8",
     "gulp-filter": "^5.1.0",
     "gulp-jsbeautifier": "^2.1.2",
-    "sync-parrot-api": "^1.0.2",
-    "update-notifier": "^2.3.0",
-    "yeoman-generator": "^2.0.2"
+    "update-notifier": "^2.5.0",
+    "yeoman-generator": "^2.0.5"
   },
   "devDependencies": {
     "@pixel2html/eslint-config": "^1.5.1",
     "babel-cli": "^6.26.0",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^22.4.3",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.14.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "fs-extra": "^5.0.0",
-    "jest": "^22.1.4",
+    "eslint": "^4.19.1",
+    "eslint-plugin-node": "^6.0.1",
+    "fs-extra": "^6.0.0",
+    "jest": "^22.4.3",
     "npm-bump": "^0.0.23",
-    "yeoman-assert": "^3.1.0",
+    "yeoman-assert": "^3.1.1",
     "yeoman-test": "^1.7.0"
   },
   "engines": {

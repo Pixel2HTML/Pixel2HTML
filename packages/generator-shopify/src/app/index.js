@@ -2,7 +2,6 @@ import Yeoman from 'yeoman-generator'
 import cowsay from 'cowsay-browser'
 import chalk from 'chalk'
 import filesToAssert from './lib/filesToAssert'
-import parrotSay from 'sync-parrot-api'
 
 import filter from 'gulp-filter'
 import prettify from 'gulp-jsbeautifier'
@@ -235,10 +234,10 @@ class ShopifySkeleton extends Yeoman {
     const message = this.options.setShopNow
       ? 'Thank you and Good Luck!'
       : 'Remember to fill in the variables inside .env so gulp can run'
-    this.options.noAnims
-      ? this.log(chalk.white((message)))
-      : this.log(parrotSay(message + ' 🦄'))
-    this.log('PS: use npm run code to start')
+    this.log(chalk.white((message + ' 🦄')))
+    this.options.npmInstall
+      ? this.log('PS: use npm run code to start')
+      : this.log('Remember to install your dependencies first! npm install')
     return this.log('Love, Pixel2HTML')
   }
 }
