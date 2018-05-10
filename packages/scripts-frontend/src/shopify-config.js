@@ -1,7 +1,6 @@
 import getShopifyPlugins from './config/shopify-plugins/getPlugins'
 import { cwd } from 'process'
 import { join } from 'path'
-import { isDebug } from './config/tools/checkEnv'
 
 const makePath = filePath => join(cwd(), filePath)
 
@@ -11,7 +10,8 @@ const createShopifyConfig = config => {
   config.output = {
     // Only output js when debugging
     // otherwise we want .js.liquid for external sourcemapa support
-    filename: isDebug() ? '[name].js' : '[name].js.liquid',
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.[hash].js',
     path: makePath('.deploy/assets')
   }
 
@@ -24,20 +24,6 @@ const createShopifyConfig = config => {
   // so other plugins can use it as well
   config.externals = {
     jquery: 'jQuery'
-  }
-
-  // Split vendor code
-  // by default all code coming from node_modules
-  config.optimization = {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'initial',
-        },
-      },
-    },
   }
 
   return config

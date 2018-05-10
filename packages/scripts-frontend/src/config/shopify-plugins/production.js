@@ -9,11 +9,7 @@ const productionPlugins = [
   }),
   // Concatenate modules for smaller builds
   new webpack.optimize.ModuleConcatenationPlugin(),
-  // Uglify the heck out of this
-  new UglifyJSPlugin({
-    sourceMap: true,
-    test: /\.(js|liquid)$/
-  }),
+  new UglifyJSPlugin({sourceMap: true}),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new webpack.NoEmitOnErrorsPlugin()
 ]
