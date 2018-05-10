@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/scripts-frontend",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "parse javascript with webpack",
   "main": "dist/common.js",
   "module": "dist/modular.js",
