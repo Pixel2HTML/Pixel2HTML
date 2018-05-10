@@ -1,3 +1,13 @@
 <h1>Pixel2HTML Shopify Skeleton</h1>
 <h2>BikeShop</h2>
 <p>Change stuff and fly away</p>
+
+{% capture randomFile %}{{ 'esketit.js' | asset_url }}{% endcapture %}
+
+{% assign assetsPath = randomFile | split: 'esketit.js' | first %}
+
+<script>
+  window.__webpack_public_path__ = "{{ assetsPath }}"
+</script>
+
+<button class="async-btn">Click for async!</button>

@@ -1,11 +1,8 @@
-// EXAMPLE DELETE EVERYTHING BELOW
-// Learn more about ES6 Here:
-// http://wesbos.com/javascript-modules/
-// https://babeljs.io/learn-es2015/
+import './publicPath'
 
-const colors = ['pink', 'red', 'blue']
-const moColors = ['blue', 'orange']
+const button = document.querySelector('.async-btn')
 
-// We have Es6 Goodies thanks to Babel
-const allTheColors = [...colors, ...moColors]
-allTheColors.map(c => console.log(c))
+button.addEventListener('click', event => {
+  import(/* webpackChunkName: 'button' */'./button.js')
+    .then(button => button.default())
+})
