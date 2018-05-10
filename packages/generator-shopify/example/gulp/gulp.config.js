@@ -8,14 +8,14 @@ const {
 
 const production = !!argv.prod || !!argv.production
 const debug = !!argv.debug
-const mode = debug ?
-  'debug' :
-  production ?
-  'production' :
-  'development'
+const mode = debug
+  ? 'debug'
+  : production
+    ? 'production'
+    : 'development'
 
 module.exports = {
-  theme: 'dist',
+  theme: '.deploy',
   shopify: {
     key: env.SHOP_KEY,
     pass: env.SHOP_PASSWORD,
@@ -51,12 +51,11 @@ module.exports = {
     ],
     theme: 'src/theme'
   },
-  onError: function(error) {
+  onError: function (error) {
     console.log(error.toString())
     production
-      ?
-      process.exit(1) :
-      this.emit('end')
+      ? process.exit(1)
+      : this.emit('end')
   },
   production,
   debug,

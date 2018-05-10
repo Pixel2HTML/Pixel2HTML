@@ -11,7 +11,7 @@ const mode = debug
     : 'development'
 
 module.exports = {
-  theme: 'dist',
+  theme: '.deploy',
   shopify: {
     key: env.SHOP_KEY,
     pass: env.SHOP_PASSWORD,
