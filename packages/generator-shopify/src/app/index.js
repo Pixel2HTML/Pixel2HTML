@@ -6,6 +6,7 @@ import filesToAssert from './lib/filesToAssert'
 import filter from 'gulp-filter'
 import prettify from 'gulp-jsbeautifier'
 import updateNotifier from 'update-notifier'
+import eslint from 'gulp-eslint'
 
 const pkg = require('../../package.json')
 
@@ -228,13 +229,23 @@ class ShopifySkeleton extends Yeoman {
   }
 
   eslintJs () {
-    this.log('Pretty JS and JSON 🙌')
-    const jsFilter = filter(['**/*.js', '**/*.json'], { restore: true })
+    const jsFilter = filter(['**/*.js'], { restore: true })
+    const jsonFilter = filter(['**/*.json'], { restore: true })
+
     this.registerTransformStream([
-      jsFilter,
+      jsonFilter,
       prettify({
         indent_size: 2
       }),
+      jsonFilter.restore
+    ])
+
+    this.registerTransformStream([
+      jsFilter,
+      eslint({
+        fix: true
+      }),
+      eslint.format(),
       jsFilter.restore
     ])
   }

@@ -1,6 +1,6 @@
 # BikeShop
 
-## Scaffolded by Shopify Skeleton Version 3.0.7
+## Scaffolded by Shopify Skeleton Version 3.1.4
 
 Easy Shopify Development 💅
 

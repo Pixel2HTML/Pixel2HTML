@@ -1,10 +1,6 @@
 // We use this to read flags in the command line
-const {
-  argv
-} = require('yargs')
-const {
-  env
-} = require('process')
+const { argv } = require('yargs')
+const { env } = require('process')
 
 const production = !!argv.prod || !!argv.production
 const debug = !!argv.debug

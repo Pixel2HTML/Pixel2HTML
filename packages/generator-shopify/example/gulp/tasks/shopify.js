@@ -5,21 +5,17 @@ const $ = require('gulp-load-plugins')()
 const createShopifyTask = name => {
   gulp.task(`shopify:${name}`, () =>
     gulp.src(config.src.theme + `/${name}/**/*`)
-    .pipe($.changedInPlace({
-      firstPass: true
-    }))
-    .pipe(gulp.dest(config.theme + `/${name}`))
+      .pipe($.changedInPlace({firstPass: true}))
+      .pipe(gulp.dest(config.theme + `/${name}`))
   )
 }
 
 const flattenShopifyTask = name => {
   gulp.task(`shopify:${name}`, () =>
     gulp.src(config.src.theme + `/${name}/**/*`)
-    .pipe($.changedInPlace({
-      firstPass: true
-    }))
-    .pipe($.flatten())
-    .pipe(gulp.dest(config.theme + `/${name}`))
+      .pipe($.changedInPlace({firstPass: true}))
+      .pipe($.flatten())
+      .pipe(gulp.dest(config.theme + `/${name}`))
   )
 }
 

@@ -2,9 +2,7 @@ const gulp = require('gulp')
 const config = require('../gulp.config')
 const browserSync = require('browser-sync')
 const WebpackDevServerUtils = require('react-dev-utils/WebpackDevServerUtils')
-const {
-  choosePort
-} = WebpackDevServerUtils
+const {choosePort} = WebpackDevServerUtils
 
 const DEFAULT_PORT = 3000
 const HOST = '0.0.0.0'

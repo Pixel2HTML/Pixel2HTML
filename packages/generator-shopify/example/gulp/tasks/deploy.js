@@ -29,28 +29,26 @@ gulp.task('theme:init', done => {
 })
 
 gulp.task('theme:watch', done =>
-  CAN_DEPLOY ?
-  watch(themeFiles, {
-    verbose: true
-  })
-  .pipe(theme.stream(undefined, () => {
-    reload()
-    done()
-  })).on('error', config.onError) :
-  done()
+  CAN_DEPLOY
+    ? watch(themeFiles, {verbose: true})
+      .pipe(theme.stream(undefined, () => {
+        reload()
+        done()
+      })).on('error', config.onError)
+    : done()
 )
 
-gulp.task('theme:upload', () => CAN_DEPLOY ?
-  gulp.src(themeFiles)
-  .pipe(theme.stream())
-  .on('error', config.onError) :
-  null
+gulp.task('theme:upload', () => CAN_DEPLOY
+  ? gulp.src(themeFiles)
+    .pipe(theme.stream())
+    .on('error', config.onError)
+  : null
 )
 
 gulp.task('deploy', gulp.series('theme:init', 'theme:upload'))
 
 // Danger Zone 💀
-gulp.task('theme:purge', function(done) {
+gulp.task('theme:purge', function (done) {
   theme.purge()
   done()
 })

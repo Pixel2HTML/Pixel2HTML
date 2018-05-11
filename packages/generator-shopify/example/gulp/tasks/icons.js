@@ -2,10 +2,11 @@ const gulp = require('gulp')
 const config = require('../gulp.config')
 const $ = require('gulp-load-plugins')()
 
-gulp.task('icons', function() {
+gulp.task('icons', function () {
   return gulp.src(config.src.icons)
     .pipe($.svgmin({
-      plugins: [{
+      plugins: [
+        {
           removeStyleElement: true
         },
         {
@@ -14,13 +15,9 @@ gulp.task('icons', function() {
           }
         }
       ],
-      js2svg: {
-        pretty: true
-      }
+      js2svg: { pretty: true }
     }))
-    .pipe($.svgstore({
-      inlineSvg: true
-    }))
+    .pipe($.svgstore({inlineSvg: true}))
     .pipe($.rename('svg-icons.liquid'))
     .pipe(gulp.dest(config.theme + '/snippets'))
 })

@@ -18,7 +18,7 @@ gulp.task('build', gulp.series(
   'shopify'
 ))
 
-gulp.task('release', gulp.series('build', 'zip'))
+gulp.task('release', gulp.series('build', 'zip', 'openBrowser'))
 
 gulp.task('serve', gulp.parallel(
   'browser-sync',

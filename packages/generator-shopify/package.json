@@ -30,6 +30,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "cowsay-browser": "^1.1.8",
+    "gulp-eslint": "^4.0.2",
     "gulp-filter": "^5.1.0",
     "gulp-jsbeautifier": "^2.1.2",
     "update-notifier": "^2.5.0",

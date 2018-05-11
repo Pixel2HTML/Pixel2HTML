@@ -18,9 +18,26 @@
   <body>
     <div class="is-hidden">{% include 'svg-icons' %}</div>
 
-    {{ content_for_layout }}
-    {{ "https://code.jquery.com/jquery-3.2.1.min.js" | script_tag }}
-    {{ "vendor.js" | asset_url | script_tag }}
-    {{ "main.js" | asset_url | script_tag }}
+    <main>
+      {{ content_for_layout }}
+    </main>
+
+    {% comment %}
+      jQuery because usually all of Shopify Plugins and app use it, so might as well...
+    {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    {% comment %}
+      Here we are setting up webpack for codesplit
+      https://webpack.js.org/configuration/output/#output-publicpath
+    {% endcomment %}
+    {% capture randomFile %}{{ 'esketit.js' | asset_url }}{% endcapture %}
+    {% assign assetsPath = randomFile | split: 'esketit.js' | first %}
+    <script>
+      window.__webpack_public_path__ = "{{ assetsPath }}"
+    </script>
+    {% comment %}
+      Our actual js bundle async
+    {% endcomment %}
+    <script src="{{ 'main.js' | asset_url }}" async></script>
   </body>
 </html>

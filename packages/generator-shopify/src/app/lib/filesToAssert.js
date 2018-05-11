@@ -71,6 +71,9 @@ const staticFiles = [
   'icons/gulp.svg',
   'images/shopify.svg',
   'scripts/index.js',
+  'scripts/async-button.js',
+  'scripts/public-path.js',
+  'scripts/index.js',
   'styles/main.scss',
   'styles/vendor.scss'
 ]

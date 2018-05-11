@@ -13,11 +13,9 @@ const distFiles = [
 ]
 
 gulp.task('zip', () =>
-  gulp.src(distFiles, {
-    base: '.'
-  })
-  .pipe(zip(zipName)).on('error', config.onError)
-  .pipe(gulp.dest('releases'))
+  gulp.src(distFiles, {base: '.'})
+    .pipe(zip(zipName)).on('error', config.onError)
+    .pipe(gulp.dest('releases'))
 )
 
 gulp.task('openBrowser', done => {
