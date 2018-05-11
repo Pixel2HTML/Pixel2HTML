@@ -10,7 +10,6 @@
 
     <meta name="theme-color" content="#000000">
     {{ checkout_stylesheets }}
-    {{ 'fonts.css' | asset_url | stylesheet_tag }}
     {{ 'vendor.css' | asset_url | stylesheet_tag }}
     {{ 'main.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
@@ -22,7 +21,10 @@
     {{ content_for_order_summary }}
     {{ content_for_layout }}
 
-    {{ "vendor.js" | asset_url | script_tag }}
-    {{ "app.js" | asset_url | script_tag }}
+    {% comment %}
+      jQuery because usually all of Shopify Plugins and app use it, so might as well...
+    {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    {% include 'webpack-setup' %}
   </body>
 </html>
