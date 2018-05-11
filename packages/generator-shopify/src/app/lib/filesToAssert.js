@@ -11,6 +11,7 @@ const shopifyCoreFiles = [
   'sections/featured-collection.liquid',
   // SNIPPETS
   'snippets/svg-icons.liquid',
+  'snippets/webpack-setup.liquid',
   // CUSTOMERS
   'templates/customers/account.liquid',
   'templates/customers/activate_account.liquid',

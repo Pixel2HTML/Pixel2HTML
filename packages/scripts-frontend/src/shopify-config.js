@@ -11,7 +11,7 @@ const createShopifyConfig = config => {
     // Only output js when debugging
     // otherwise we want .js.liquid for external sourcemapa support
     filename: '[name].js',
-    chunkFilename: '[name].chunk.[hash].js',
+    chunkFilename: '[name].chunk.[chunkhash:5].js',
     path: makePath('.deploy/assets')
   }
 
