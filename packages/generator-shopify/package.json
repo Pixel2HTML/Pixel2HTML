@@ -28,6 +28,7 @@
   "repository": "git@github.com:Pixel2HTML/shopify-skeleton.git",
   "license": "MIT",
   "dependencies": {
+    "@pixel2html/eslint-config": "^1.5.1",
     "chalk": "^2.4.1",
     "cowsay-browser": "^1.1.8",
     "gulp-eslint": "^4.0.2",
@@ -37,7 +38,6 @@
     "yeoman-generator": "^2.0.5"
   },
   "devDependencies": {
-    "@pixel2html/eslint-config": "^1.5.1",
     "babel-cli": "^6.26.0",
     "babel-jest": "^22.4.3",
     "babel-plugin-add-module-exports": "^0.2.1",
