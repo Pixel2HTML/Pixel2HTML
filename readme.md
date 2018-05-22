@@ -1,5 +1,7 @@
 # Pixel2HTML
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+
 Home of our OpenSource Packages.
 
 ## Packages
