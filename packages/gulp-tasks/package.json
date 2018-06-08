@@ -10,7 +10,7 @@
     "@pixel2html/browserlist": "^1.0.1",
     "@pixel2html/scripts-frontend": "^0.5.4",
     "@pixel2html/stylelint-config": "^1.5.4",
-    "autoprefixer": "^8.4.1",
+    "autoprefixer": "^8.6.1",
     "browser-sync": "^2.24.4",
     "del": "^3.0.0",
     "fs-path": "^0.0.24",
@@ -26,7 +26,7 @@
     "gulp-posthtml": "^3.0.4",
     "gulp-pug": "^4.0.1",
     "gulp-purifycss": "^0.2.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-zip": "^4.1.0",
@@ -36,7 +36,7 @@
     "posthtml-img-autosize": "^0.1.2",
     "react-dev-utils": "^5.0.1",
     "sass-module-importer": "^1.4.0",
-    "stylelint": "^9.2.0",
+    "stylelint": "^9.2.1",
     "yargs": "^11.0.0"
   },
   "eslintConfig": {
