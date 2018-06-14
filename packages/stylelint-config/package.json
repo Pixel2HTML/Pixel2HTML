@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/stylelint-config",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "SCSS Recommendations from Pixel2HTML",
   "main": "index.js",
   "repository": "Pixel2HTML/stylelint-config",
