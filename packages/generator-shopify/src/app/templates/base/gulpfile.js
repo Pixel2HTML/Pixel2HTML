@@ -14,8 +14,8 @@ gulp.task('build', gulp.series(
   'icons',
   'images',
   'scripts',
+  'shopify',
   'styles',
-  'shopify'
 ))
 
 gulp.task('release', gulp.series('build', 'zip', 'openBrowser'))

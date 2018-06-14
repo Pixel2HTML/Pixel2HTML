@@ -46,6 +46,7 @@ gulp.task('vendor:styles', () =>
     }))
     .pipe(when(production, $.groupCssMediaQueries()))
     .pipe(when(production, $.csscomb()))
+    .pipe(when(production, $.purifycss(purifyWatch, { info: true })))
     .pipe(when(!production, $.sourcemaps.write('.', {
       sourceMappingURL: config.makeLiquidSourceMappingURL
     })))
