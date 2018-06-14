@@ -33,7 +33,7 @@
     "gulp-purifycss": "^0.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
-    "gulp-shopify-theme": "mike3run/gulp-shopify-theme",
+    "gulp-shopify-theme": "shelldandy/gulp-shopify-theme",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgmin": "^1.2.4",
     "gulp-svgstore": "^6.1.1",
