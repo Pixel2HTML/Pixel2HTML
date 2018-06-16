@@ -15,8 +15,6 @@ const createShopifyConfig = config => {
     path: makePath('.deploy/assets')
   }
 
-  config.devtool = 'source-map'
-
   config.plugins = getShopifyPlugins()
 
   // Opt out of default to play nice with liquid
