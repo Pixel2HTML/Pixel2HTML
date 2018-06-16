@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/gulp-tasks",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Pixel2HTML Frontend Gulp Tasks",
   "main": "index.js",
   "repository": "https://github.com/Pixel2HTML/Pixel2HTML",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@pixel2html/browserlist": "^1.0.1",
-    "@pixel2html/scripts-frontend": "^0.5.9",
+    "@pixel2html/scripts-frontend": "^0.5.10",
     "@pixel2html/stylelint-config": "^1.5.5",
     "autoprefixer": "^8.6.2",
     "browser-sync": "^2.24.4",
