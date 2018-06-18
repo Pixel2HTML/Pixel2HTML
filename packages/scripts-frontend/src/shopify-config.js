@@ -1,12 +1,10 @@
 import getShopifyPlugins from './config/shopify-plugins/getPlugins'
 import { cwd } from 'process'
 import { join } from 'path'
-import { checkDebug } from './config/tools/checkEnv'
 
 const makePath = filePath => join(cwd(), filePath)
 
 const createShopifyConfig = config => {
-  const shouldBeDebugMode = checkDebug()
   config.entry.main = makePath('src/scripts')
 
   config.output = {
@@ -16,10 +14,6 @@ const createShopifyConfig = config => {
     chunkFilename: '[name].chunk.[chunkhash:5].js',
     path: makePath('.deploy/assets')
   }
-
-  config.devtool = shouldBeDebugMode
-    ? 'source-map'
-    : 'inline-cheap-module-source-map'
 
   config.plugins = getShopifyPlugins()
 
