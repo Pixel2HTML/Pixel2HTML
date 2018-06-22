@@ -1,0 +1,20 @@
+{
+  "name": "@pixel2html/get-shopify-settings",
+  "version": "0.0.1",
+  "description": "get the settings",
+  "main": "get-shopify-settings.js",
+  "repository": "https://github.com/Pixel2HTML/Pixel2HTML",
+  "author": "Miguel Palau <miguel@pixel2html.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@pixel2html/eslint-config": "^1.5.2",
+    "eslint": "^4.19.1"
+  },
+  "eslintConfig": {
+    "extends": "@pixel2html/eslint-config"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "shopify-api-node": "^2.14.0"
+  }
+}
