@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (api, opts) {
   if (!opts) {
     opts = {};

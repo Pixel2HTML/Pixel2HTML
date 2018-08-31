@@ -14,7 +14,11 @@
   "license": "MIT",
   "files": [
     "index.js",
-    "dependencies.js"
+    "create.js",
+    "dependencies.js",
+    "dev.js",
+    "prod.js",
+    "test.js"
   ],
   "dependencies": {
     "@babel/core": "7.0.0",
