@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/scripts-frontend",
-  "version": "0.5.16",
+  "version": "0.5.17",
   "description": "parse javascript with webpack",
   "main": "dist/common.js",
   "module": "dist/modular.js",
@@ -27,7 +27,7 @@
   "dependencies": {
     "@babel/core": "^7.0.0-beta.53",
     "@babel/runtime": "^7.0.0-beta.53",
-    "@pixel2html/babel-preset": "^1.5.3",
+    "@pixel2html/babel-preset": "^1.6.0",
     "@pixel2html/eslint-config": "^1.7.0",
     "babel-loader": "^8.0.0-beta.2",
     "eslint": "^5.1.0",
