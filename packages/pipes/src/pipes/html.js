@@ -6,7 +6,6 @@ import replace from 'gulp-html-replace'
 
 const html = ({
   cssModules,
-  imgAutoSize,
   htmlReplace,
   plugins = []
 }) => {
