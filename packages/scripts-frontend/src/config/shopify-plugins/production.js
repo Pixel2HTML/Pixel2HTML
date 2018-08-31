@@ -9,7 +9,7 @@ const productionPlugins = [
   }),
   // Concatenate modules for smaller builds
   new webpack.optimize.ModuleConcatenationPlugin(),
-  new UglifyJSPlugin({sourceMap: true}),
+  new UglifyJSPlugin({ sourceMap: true }),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new webpack.NoEmitOnErrorsPlugin()
 ]
