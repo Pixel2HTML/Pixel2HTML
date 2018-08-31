@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/pipes",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Plugabble pipes for a composable gulp stream",
   "main": "dist/pipes.js",
   "module": "dist/pipes.modular.js",
@@ -47,5 +47,6 @@
   },
   "eslintConfig": {
     "extends": "@pixel2html/eslint-config"
-  }
+  },
+  "gitHead": "ca29076e2064038c5570a78e38d2dd9ce1897fc5"
 }
