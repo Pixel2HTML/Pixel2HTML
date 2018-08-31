@@ -1,7 +1,7 @@
 {
   "name": "@pixel2html/generator-frontend",
   "description": "Pixel2HTML Boilerplate Generator",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "repository": "https://github.com/Pixel2HTML/pixel2html-generator",
   "license": "MIT",
   "author": {
