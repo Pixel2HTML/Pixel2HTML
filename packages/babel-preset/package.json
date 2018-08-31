@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/babel-preset",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "babel recommendations by timmy burger",
   "main": "index.js",
   "repository": "Pixel2HTML/babel-preset",
@@ -35,7 +35,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.13"
   },
   "devDependencies": {
-    "@pixel2html/eslint-config": "^1.6.0",
+    "@pixel2html/eslint-config": "^1.7.0",
     "eslint": "^5.1.0"
   },
   "eslintConfig": {

@@ -1,7 +1,7 @@
 {
   "name": "@pixel2html/generator-frontend",
   "description": "Pixel2HTML Boilerplate Generator",
-  "version": "2.5.5",
+  "version": "2.5.6",
   "repository": "https://github.com/Pixel2HTML/pixel2html-generator",
   "license": "MIT",
   "author": {
@@ -47,7 +47,7 @@
   },
   "main": "app/index.js",
   "dependencies": {
-    "@pixel2html/eslint-config": "^1.6.0",
+    "@pixel2html/eslint-config": "^1.7.0",
     "chalk": "^2.4.1",
     "eslint": "^5.1.0",
     "eslint-config-standard": "^11.0.0",
