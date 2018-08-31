@@ -17,10 +17,6 @@ describe('Bootstrap 4 features', function () {
       .toPromise()
   })
 
-  it('Should list dependencies in package.json', function () {
-    assert.fileContent('package.json', /"bootstrap"/)
-  })
-
   it('should exists a gulp routine', function () {
     assert.file([
       'gulp/common/styles.js',
@@ -54,10 +50,6 @@ describe('Bootstrap 3 features', function () {
         frontEndFramework: 'bootstrap-3'
       })
       .toPromise()
-  })
-
-  it('Should list dependencies in package.json', function () {
-    assert.fileContent('package.json', /"bootstrap-sass"/)
   })
 
   it('should exists a gulp routine', function () {

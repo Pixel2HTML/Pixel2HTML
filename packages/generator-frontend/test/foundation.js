@@ -17,10 +17,6 @@ describe('Foundation features', function () {
       .toPromise()
   })
 
-  it('Should exists dependencies in package.json', function () {
-    assert.fileContent('package.json', /"foundation-sites"/)
-  })
-
   it('should exists a gulp routine', function () {
     assert.file([
       'gulp/common/styles.js',

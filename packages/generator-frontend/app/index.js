@@ -481,10 +481,6 @@ class PixelGenerator extends Generator {
       description: `${projectName} front end source code`,
       version: '1.0.0',
       repository: 'https://www.pixel2html.com',
-      dependencies: {
-        // Gotta do it this way since the default is still 3.9.1
-        gulp: '^4.0.0'
-      },
       scripts: {
         start: 'npm install',
         code: 'gulp',
@@ -496,16 +492,14 @@ class PixelGenerator extends Generator {
         lint: 'npm run lint:js; npm run lint:scss',
         debug: 'gulp scripts --debug'
       },
+      dependencies: {},
+      devDependencies: {},
       stylelint: {
         extends: '@pixel2html/stylelint-config'
       },
       eslintConfig: {
         extends: '@pixel2html/eslint-config'
       }
-    }
-
-    if (frontEndFramework === 'bootstrap-3') {
-      pkgJson.dependencies['bootstrap-sass'] = '^3.3.7'
     }
 
     return this.fs.extendJSON(this.destinationPath('package.json'), pkgJson)
@@ -519,6 +513,7 @@ class PixelGenerator extends Generator {
       '@pixel2html/scripts-frontend',
       'del',
       'fs-path',
+      'gulp@next',
       'gulp-zip',
       'yargs',
     ]
@@ -528,6 +523,10 @@ class PixelGenerator extends Generator {
     if (frontEndFramework === 'bootstrap-4') {
       CONDITIONALS.push('bootstrap')
       CONDITIONALS.push('popper.js')
+    }
+
+    if (frontEndFramework === 'bootstrap-3') {
+      CONDITIONALS.push('bootstrap-sass')
     }
 
     if (frontEndFramework === 'foundation') {
@@ -547,7 +546,7 @@ class PixelGenerator extends Generator {
   installDevDeps () {
     const DEV = [
       '@pixel2html/stylelint-config',
-      'browsersync',
+      'browser-sync',
       'react-dev-utils',
       'stylelint',
     ]

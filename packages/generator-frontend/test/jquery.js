@@ -18,10 +18,6 @@ describe('jQuery features', function () {
       .toPromise()
   })
 
-  it('should list dependencies in package.json', function () {
-    assert.fileContent('package.json', /"jquery"/)
-  })
-
   it('should exists a gulp routine', function () {
     assert.file([
       'gulp/common/scripts.js'
