@@ -48,5 +48,5 @@
   "eslintConfig": {
     "extends": "@pixel2html/eslint-config"
   },
-  "gitHead": "ca29076e2064038c5570a78e38d2dd9ce1897fc5"
+  "gitHead": "39edb3a87de19aa2b93c9fe2608e6c43373ea77d"
 }
