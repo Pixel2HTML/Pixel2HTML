@@ -25,19 +25,19 @@
     "postversion": "git push; git push --tags"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.53",
-    "@babel/runtime": "^7.0.0-beta.53",
+    "@babel/core": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "@pixel2html/babel-preset": "^1.6.0",
     "@pixel2html/eslint-config": "^1.7.0",
-    "babel-loader": "^8.0.0-beta.2",
-    "eslint": "^5.1.0",
-    "eslint-loader": "^2.0.0",
-    "uglifyjs-webpack-plugin": "^1.2.7",
-    "webpack": "^4.16.0",
+    "babel-loader": "^8.0.0",
+    "eslint": "^5.4.0",
+    "eslint-loader": "^2.1.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.17.1",
     "webpack-bundle-analyzer": "^2.13.1"
   },
   "devDependencies": {
-    "rollup": "^0.62.0"
+    "rollup": "^0.65.0"
   },
   "eslintConfig": {
     "extends": "@pixel2html/eslint-config",
