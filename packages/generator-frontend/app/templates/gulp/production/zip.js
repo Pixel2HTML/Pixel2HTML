@@ -8,7 +8,7 @@ gulp.task('zip', () => {
     `!${config.directories.dist.base}`
   ]
 
-  return gulp.src(distFiles, {base: '.'})
+  return gulp.src(distFiles, { base: '.' })
     .pipe(zip('latest.zip')).on('error', config.onError)
     .pipe(gulp.dest('dist/releases'))
 })

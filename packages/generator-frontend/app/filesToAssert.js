@@ -3,7 +3,6 @@ const baseFiles = [
 ]
 
 const baseTemplates = [
-  'package.json',
   'README.md'
 ]
 

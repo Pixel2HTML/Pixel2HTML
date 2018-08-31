@@ -28,6 +28,7 @@ describe('General Assertions', function () {
       ...baseTemplates,
       ...gulpFiles,
       ...gulpTemplates,
+      'package.json',
       '.gitignore',
       '.gitattributes',
       '.tern-project',

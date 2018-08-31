@@ -3,7 +3,7 @@ const config = require('../config')
 const browserSync = require('browser-sync')
 const openBrowser = require('react-dev-utils/openBrowser')
 const WebpackDevServerUtils = require('react-dev-utils/WebpackDevServerUtils')
-const {prepareUrls, choosePort} = WebpackDevServerUtils
+const { prepareUrls, choosePort } = WebpackDevServerUtils
 
 gulp.task('browser-sync', done => {
   const DEFAULT_PORT = 3000

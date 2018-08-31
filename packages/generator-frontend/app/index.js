@@ -71,16 +71,10 @@ class PixelGenerator extends Generator {
       type: String,
       required: false
     })
-
-    this.option('npm', {
-      desc: 'Sets the usage of npm',
-      type: String,
-      required: false
-    })
   }
 
   notify () {
-    updateNotifier({pkg}).notify()
+    updateNotifier({ pkg }).notify()
   }
 
   readConfigFile () {
@@ -91,7 +85,6 @@ class PixelGenerator extends Generator {
         this.options.markupLanguage = config.markupLanguage
         this.options.frontEndFramework = config.frontEndFramework
         this.options.jQuery = config.jQuery
-        this.options.npm = config.npm
       })
       .catch(err => {
         let okayError = err.toString() !== "Error: ENOENT: no such file or directory, open './.project.conf'"
@@ -164,19 +157,13 @@ class PixelGenerator extends Generator {
         name: 'jQuery',
         message: 'Would you like to use jQuery?'
       },
-      {
-        type: 'confirm',
-        name: 'npm',
-        message: 'Should I install extra dependencies needed with npm?',
-        default: true
-      }
     ])
+
     this.options.projectName = props.projectName
     this.options.qtyScreens = parseInt(props.qtyScreens)
     this.options.markupLanguage = props.markupLanguage
     this.options.frontEndFramework = props.frontEndFramework
     this.options.jQuery = props.jQuery
-    this.options.npm = props.npm
   }
 
   writeProjectFiles () {
@@ -481,16 +468,90 @@ class PixelGenerator extends Generator {
       'generatedBy': 'Pixel2HTML',
       'generatorVersion': pkg.version,
       'generatedAt': new Date(),
-      'npm': this.options.npm
     }
 
     this.fs.writeJSON('./.project.conf', configJson)
   }
 
+  configurePkgJson () {
+    const { frontEndFramework, projectName } = this.options
+
+    const pkgJson = {
+      name: projectName,
+      description: `${projectName} front end source code`,
+      version: '1.0.0',
+      repository: 'https://www.pixel2html.com',
+      dependencies: {
+        // Gotta do it this way since the default is still 3.9.1
+        gulp: '^4.0.0'
+      },
+      scripts: {
+        start: 'npm install',
+        code: 'gulp',
+        build: 'gulp build --prod',
+        release: 'gulp release --prod',
+        'lint:js': "eslint 'src/**/*.js'",
+        'fix:js': "eslint 'src/**/*.js' --fix",
+        'lint:scss': "stylelint 'src/**/*.scss'",
+        lint: 'npm run lint:js; npm run lint:scss',
+        debug: 'gulp scripts --debug'
+      },
+      stylelint: {
+        extends: '@pixel2html/stylelint-config'
+      },
+      eslintConfig: {
+        extends: '@pixel2html/eslint-config'
+      }
+    }
+
+    if (frontEndFramework === 'bootstrap-3') {
+      pkgJson.dependencies['bootstrap-sass'] = '^3.3.7'
+    }
+
+    return this.fs.extendJSON(this.destinationPath('package.json'), pkgJson)
+  }
+
   installDependencies () {
-    this.options.npm
-      ? this.npmInstall()
-      : this.log('Skipping npm install')
+    const { frontEndFramework, jQuery } = this.options
+
+    const MUST_HAVE = [
+      '@pixel2html/pipes',
+      '@pixel2html/scripts-frontend',
+      'del',
+      'fs-path',
+      'gulp-zip',
+      'yargs',
+    ]
+
+    const CONDITIONALS = []
+
+    if (frontEndFramework === 'bootstrap-4') {
+      CONDITIONALS.push('bootstrap')
+      CONDITIONALS.push('popper-js')
+    }
+
+    if (frontEndFramework === 'foundation') {
+      CONDITIONALS.push('foundation-sites')
+    }
+
+    if (jQuery || frontEndFramework) {
+      CONDITIONALS.push('jquery')
+    }
+
+    return this.npmInstall([
+      ...MUST_HAVE,
+      ...CONDITIONALS
+    ], { save: true })
+  }
+
+  installDevDeps () {
+    const DEV = [
+      '@pixel2html/stylelint-config',
+      'browsersync',
+      'react-dev-utils',
+      'stylelint',
+    ]
+    return this.npmInstall(DEV, { 'save-dev': true })
   }
 
   eslintJs () {
