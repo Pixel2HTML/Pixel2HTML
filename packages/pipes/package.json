@@ -1,6 +1,6 @@
 {
   "name": "@pixel2html/pipes",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Plugabble pipes for a composable gulp stream",
   "main": "dist/pipes.js",
   "module": "dist/pipes.modular.js",
