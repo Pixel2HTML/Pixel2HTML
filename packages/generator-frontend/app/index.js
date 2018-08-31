@@ -474,13 +474,14 @@ class PixelGenerator extends Generator {
   }
 
   configurePkgJson () {
-    const { frontEndFramework, projectName } = this.options
+    const { projectName } = this.options
 
     const pkgJson = {
       name: projectName,
       description: `${projectName} front end source code`,
       version: '1.0.0',
       repository: 'https://www.pixel2html.com',
+      license: 'MIT',
       scripts: {
         start: 'npm install',
         code: 'gulp',
