@@ -527,7 +527,7 @@ class PixelGenerator extends Generator {
 
     if (frontEndFramework === 'bootstrap-4') {
       CONDITIONALS.push('bootstrap')
-      CONDITIONALS.push('popper-js')
+      CONDITIONALS.push('popper.js')
     }
 
     if (frontEndFramework === 'foundation') {
