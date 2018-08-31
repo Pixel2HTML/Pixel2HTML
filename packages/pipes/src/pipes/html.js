@@ -1,7 +1,7 @@
 import lazypipe from 'lazypipe'
 import modules from 'posthtml-css-modules'
 import postHtml from 'gulp-posthtml'
-import prettify from 'gulp-html-prettify'
+import prettify from 'gulp-jsbeautifier'
 import replace from 'gulp-html-replace'
 
 const html = ({
