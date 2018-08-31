@@ -50,10 +50,6 @@ gulp.task('markup', () =>
 <% if (markupLanguage === 'html') { -%>
     .pipe(html({
       cssModules: `./${config.directories.src.cssModules}`,
-      imgAutoSize: {
-        root: `./${config.directories.dist.base}`,
-        processEmptySize: true
-      },
       htmlReplace: {js, css}
     })())
     .on('error', config.onError)
