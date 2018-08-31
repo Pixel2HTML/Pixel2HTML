@@ -72,8 +72,8 @@ class PixelGenerator extends Generator {
       required: false
     })
 
-    this.option('yarn', {
-      desc: 'Sets the usage of yarn',
+    this.option('npm', {
+      desc: 'Sets the usage of npm',
       type: String,
       required: false
     })
@@ -91,7 +91,7 @@ class PixelGenerator extends Generator {
         this.options.markupLanguage = config.markupLanguage
         this.options.frontEndFramework = config.frontEndFramework
         this.options.jQuery = config.jQuery
-        this.options.yarn = config.yarn
+        this.options.npm = config.npm
       })
       .catch(err => {
         let okayError = err.toString() !== "Error: ENOENT: no such file or directory, open './.project.conf'"
@@ -166,8 +166,8 @@ class PixelGenerator extends Generator {
       },
       {
         type: 'confirm',
-        name: 'yarn',
-        message: 'Should I install extra dependencies needed with Yarn?',
+        name: 'npm',
+        message: 'Should I install extra dependencies needed with npm?',
         default: true
       }
     ])
@@ -176,7 +176,7 @@ class PixelGenerator extends Generator {
     this.options.markupLanguage = props.markupLanguage
     this.options.frontEndFramework = props.frontEndFramework
     this.options.jQuery = props.jQuery
-    this.options.yarn = props.yarn
+    this.options.npm = props.npm
   }
 
   writeProjectFiles () {
@@ -481,16 +481,16 @@ class PixelGenerator extends Generator {
       'generatedBy': 'Pixel2HTML',
       'generatorVersion': pkg.version,
       'generatedAt': new Date(),
-      'yarn': this.options.yarn
+      'npm': this.options.npm
     }
 
     this.fs.writeJSON('./.project.conf', configJson)
   }
 
   installDependencies () {
-    this.options.yarn
-      ? this.yarnInstall()
-      : this.log('Skipping yarn install')
+    this.options.npm
+      ? this.npmInstall()
+      : this.log('Skipping npm install')
   }
 
   eslintJs () {
