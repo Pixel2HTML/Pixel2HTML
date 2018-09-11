@@ -15,6 +15,7 @@ const mode = debug
 module.exports = {
   src: 'src',
   dist: 'dist',
+  siteUrl: null,
   production,
   debug,
   mode,
