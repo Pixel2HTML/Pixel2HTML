@@ -514,7 +514,7 @@ class PixelGenerator extends Generator {
       '@pixel2html/scripts-frontend',
       'del',
       'fs-path',
-      'gulp@next',
+      'gulp',
       'gulp-zip',
       'yargs',
     ]
